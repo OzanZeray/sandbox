@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 
 // CORS middleware
@@ -17,8 +17,9 @@ app.use((req, res, next) => {
 app.use(express.json()); // to parse JSON request bodies
 
 // Routes
-const messageRoutes = require('./routes/message');
-const crawlRoutes = require('./routes/crawl');
+import messageRoutes from './routes/message.js';
+import crawlRoutes from './routes/crawl.js';
+
 
 app.use('/message', messageRoutes);
 app.use('/crawl', crawlRoutes);

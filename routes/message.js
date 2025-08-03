@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
 
 router.post('/', (req, res) => {
@@ -7,4 +7,4 @@ router.post('/', (req, res) => {
   res.json({ message: `Hello, ${userName}! This is your message from the backend.` });
 });
 
-module.exports = router; 
+export default router;
