@@ -1,12 +1,12 @@
-import express from 'express';
 import dotenv from 'dotenv';
-import cors from 'cors';  // or: const cors = require('cors');
-import messageRoutes from './routes/message.js';
-import crawlRoutes from './routes/crawl.js';
-// Load environment variables
 dotenv.config();
-const app = express();
 
+import express from 'express';
+import cors from 'cors';
+import messageRoutes from './routes/message.js';
+import crawlRoutes from './routes/crawl.js';  
+
+const app = express();
 
 app.use(cors()); // Enable CORS for all origins by default
 app.use(express.json()); // to parse JSON request bodies
