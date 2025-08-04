@@ -3,8 +3,11 @@ dotenv.config();
 
 import express from 'express';
 import cors from 'cors';
+
+
 import messageRoutes from './routes/message.js';
 import crawlRoutes from './routes/crawl.js';  
+import ragRoutes from './routes/rag.js';  
 
 const app = express();
 
@@ -14,7 +17,8 @@ app.use(express.json()); // to parse JSON request bodies
 // Routes
 app.use('/message', messageRoutes);
 app.use('/crawl', crawlRoutes);
-console.log("Using OpenAI key:", process.env.OPENAI_API_KEY);
+app.use('/rag', ragRoutes);
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
